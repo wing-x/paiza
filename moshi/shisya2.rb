@@ -16,7 +16,7 @@ if l == 1
   ans << n
   else
   ans << n.round(-1)
-end
+  end
 elsif l == 2
   ans << n.round(-0)
   ans << n.round(-1)
@@ -25,7 +25,7 @@ else
     break if m + 1 == ansl
     l.times do |i|
       ans[m] << n #これを入れておかないと、100みたいな値を入れたときに表示が出ない
-      ans[m] << n.round(-i) if n.round(-i) > n
+      ans[m] << n.round(-i) if n.round(-i) > n# ifで改行するとendの数がずれて動かなくなる
       ans[m].each do |j|
         if j.round(-i) > n.round(-i) && j.round(-i) != n.round(-i)
           ans[m + 1] << j.round(-i)
@@ -43,6 +43,7 @@ if m > m.round(-l)
 else
   puts m.round(-l)
 end
+
 # m = (ans.flatten.uniq!).max
 # puts m
 # えー、この書き方
@@ -52,6 +53,7 @@ end
 # 最低でも元の値より小さくなった数字は弾こう！
 # とりあえず弾けた
 # 次に元の値と同じやつは弾くっていうのを設定しよう
+
 =begin
 出来たと思ったら、何か一部の値でおかしい事になってるぞ！？
 247→300oK
@@ -64,4 +66,10 @@ nを直接入れて解決
 何とかテスト通ったあああああああああああ！
 よし！
 いえーい！
+=end
+
+=begin
+正解はするけど美しさが足りない
+どうしたものか
+array.popも利用すればもっと良い感じに書ける気がするぞこれ
 =end
