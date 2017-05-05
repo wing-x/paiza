@@ -1,4 +1,3 @@
-# 入力処理
 n = gets.to_i
 l = n.to_s.length
 def ary(a)
@@ -36,8 +35,7 @@ else
   end
 end
 m = ans.flatten.max
-#以下のif文は、445を入れた時に500で止めずに1000まで行かせるため
-#何も考えずにroundさせると123とかが0になるのでifで場合分け
+#以下のif文は、445を入れた時に500で止めずに1000まで行かせるため,何も考えずにroundさせると123とかが0になるのでifで場合分け
 if m > m.round(-l)
   puts m
 else
