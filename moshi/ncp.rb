@@ -12,7 +12,7 @@ end
 
 m.times do |k|
   item = h[ary[k][0]]
-  op= item[0] * ary[k][1] #opはoriginal_pricekaから
+  op= item[0] * ary[k][1] #opはoriginal_priceから
   dc = (ary[k][1] / item[1]) * item[2] #dcはdiscountから
   price = op - dc
   puts price
